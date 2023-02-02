@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:maven/service/languages/key/home_screen.dart'
     as home_screen_language;
 
 part 'weather_card.dart';
 part 'today_weather_list.dart';
+part 'seven_days_weather.dart';
 part 'other_weather_info_list/other_weather_info_list.dart';
 part 'other_weather_info_list/uv_index.dart';
 part 'other_weather_info_list/sun_rise.dart';

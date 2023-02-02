@@ -36,7 +36,13 @@ class TodayWeatherList extends StatelessWidget {
                               ),
                             ),
                             MaterialButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(() => const SevenDaysWeather(),
+                                    duration: const Duration(
+                                      milliseconds: 500,
+                                    ),
+                                    transition: Transition.rightToLeftWithFade);
+                              },
                               elevation: 0,
                               padding: EdgeInsets.zero,
                               materialTapTargetSize:
