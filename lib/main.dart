@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:maven/parameter/const.dart';
@@ -11,13 +12,14 @@ import 'package:maven/ui/mobile/first_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GetIt.I.registerSingleton<Database>(Database());
   UserSetting userSetting = UserSetting();
   await userSetting.loadSetting();
   GetIt.I.registerSingleton<UserSetting>(userSetting);
-  GetIt.I.registerSingleton<LocaleString>(LocaleString(userSetting.getLocale()));
+  GetIt.I
+      .registerSingleton<LocaleString>(LocaleString(userSetting.getLocale()));
 
   runApp(const MyApp());
 }
@@ -31,7 +33,9 @@ class MyApp extends StatelessWidget {
       title: 'Maven',
       home: MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (context) => ThemeProvider(GetIt.I<UserSetting>().getThemeMode())),
+          ChangeNotifierProvider(
+              create: (context) =>
+                  ThemeProvider(GetIt.I<UserSetting>().getThemeMode())),
         ],
         child: const ThemeWrap(),
       ),
@@ -73,9 +77,7 @@ class MyAppHome extends StatelessWidget {
           height: 40.0,
           valueFontSize: 15.0,
           toggleSize: 30.0,
-          value: ThemeMode.light == themeMode
-              ? true
-              : false,
+          value: ThemeMode.light == themeMode ? true : false,
           borderRadius: 30.0,
           padding: 8.0,
           showOnOff: true,
@@ -110,9 +112,7 @@ class MyAppHome extends StatelessWidget {
           height: 55.0,
           valueFontSize: 25.0,
           toggleSize: 45.0,
-          value: ThemeMode.light == themeMode
-              ? true
-              : false,
+          value: ThemeMode.light == themeMode ? true : false,
           borderRadius: 30.0,
           padding: 8.0,
           showOnOff: true,

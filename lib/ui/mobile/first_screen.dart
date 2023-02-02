@@ -70,7 +70,7 @@ class FirstScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
@@ -80,13 +80,16 @@ class FirstScreen extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 0),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 onPressed: () {
-                  Get.to(()=>const BaseScreen());
+                  Get.to(() => const BaseScreen(),
+                      duration: const Duration(milliseconds: 500),
+                      transition: Transition.rightToLeft);
                 },
                 child: Text(first_screen_language.get_started),
               ),

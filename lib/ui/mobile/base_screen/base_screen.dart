@@ -4,7 +4,7 @@ import 'package:maven/widgets/keep_alive_page.dart';
 import 'package:maven/service/languages/key/base_screen.dart'
     as base_screen_language;
 
-import '../home_screen.dart';
+import '../home_screen/home_screen.dart';
 import 'bloc/bloc.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -37,7 +37,7 @@ class _BaseScreenState extends State<BaseScreen> {
         },
       ),
       bottomNavigationBar: Container(
-        height: 80,
+        height: 60,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.background,
           borderRadius: const BorderRadius.only(
@@ -65,12 +65,11 @@ class _BaseScreenState extends State<BaseScreen> {
               currentIndex: index,
               showUnselectedLabels: false,
               onTap: (value) {
-                _pageController.animateToPage(value, duration: const Duration(milliseconds: 300), curve: Curves.linear);
+                _pageController.animateToPage(value,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.linear);
                 _baseScreenBloc.add(ChangePageIndex(value));
               },
-              selectedIconTheme: IconThemeData(
-
-              ),
             );
           },
           bloc: _baseScreenBloc,

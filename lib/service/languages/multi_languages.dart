@@ -7,6 +7,7 @@ import 'package:maven/service/settings/user_setting.dart';
 
 part 'screen/first_screen.dart';
 part 'screen/base_screen.dart';
+part 'screen/home_screen.dart';
 
 class LocaleString extends Translations {
   static const ENGLISH = Locale("en", "US");
@@ -25,9 +26,12 @@ class LocaleString extends Translations {
         _en: {
           ..._firstScreen[_en]!,
           ..._baseScreen[_en]!,
+          ..._homeScreen[_en]!,
         },
         _vn: {
+          ..._firstScreen[_vn]!,
           ..._baseScreen[_vn]!,
+          ..._homeScreen[_vn]!,
         },
       };
 
