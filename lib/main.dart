@@ -1,6 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:maven/parameter/const.dart';
@@ -9,6 +8,7 @@ import 'package:maven/service/languages/multi_languages.dart';
 import 'package:maven/service/settings/user_setting.dart';
 import 'package:maven/service/theme/theme_provider.dart';
 import 'package:maven/ui/mobile/first_screen.dart';
+import 'package:maven/service/location/location_helper.dart';
 import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
 
@@ -20,6 +20,7 @@ void main() async {
   GetIt.I.registerSingleton<UserSetting>(userSetting);
   GetIt.I
       .registerSingleton<LocaleString>(LocaleString(userSetting.getLocale()));
+  GetIt.I.registerSingleton<LocationHelper>(LocationHelper());
 
   runApp(const MyApp());
 }

@@ -5,9 +5,10 @@ import 'package:get_it/get_it.dart';
 import 'package:maven/service/settings/model/setting.dart';
 import 'package:maven/service/settings/user_setting.dart';
 
-part 'screen/first_screen.dart';
-part 'screen/base_screen.dart';
-part 'screen/home_screen.dart';
+part 'components/first_screen.dart';
+part 'components/base_screen.dart';
+part 'components/home_screen.dart';
+part 'components/errors.dart';
 
 class LocaleString extends Translations {
   static const ENGLISH = Locale("en", "US");

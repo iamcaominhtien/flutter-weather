@@ -1,5 +1,5 @@
 import 'package:maven/service/settings/user_setting.dart';
-import 'package:maven/service/weather/model/weather.dart';
+import 'package:maven/service/weather/model/weather/weather.dart';
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:path/path.dart';
 

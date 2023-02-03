@@ -8,7 +8,6 @@ part of 'setting.dart';
 
 Setting _$SettingFromJson(Map<String, dynamic> json) => Setting(
       language: json['language'] as String,
-      theme: json['theme'] as String?,
       userName: json['userName'] as String?,
       cityName: json['cityName'] as String?,
     );
